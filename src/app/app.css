@@ -1,0 +1,408 @@
+@font-face {
+  font-family: 'Nordic Alternative';
+  src: url("/assets/fonts/Nordic Alternative Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+header{
+  font-family: 'Nordic Alternative', sans-serif;
+  font-size: 2.5rem;
+    display: flex;/*recuadro*/
+    width: 100%;
+    background-color: #ffd28f;
+    height: 80px;
+    color: #000000;
+    align-items: center;
+    justify-content: center;
+}
+
+footer{
+  font-family: 'Nordic Alternative', sans-serif;
+  font-size: 2.5rem;
+    display:grid;
+    width: 100%;
+    height: 50px;
+    background-color: #ffd28f;
+    color: #000000;
+    padding: 20px 0;/*espacio entre cosas*/
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.lista-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex: 2;
+  padding: 20px;
+}
+
+.tarjeta{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    gap: 20px;
+    flex: 2;
+    width: 280px;
+    height: 400px;
+    background-color: #ffebcd;
+    color:#000000;
+    padding: 20px;
+    border-style: dotted;
+    border-color: #ffad31;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 4px 8px #00000000;
+    transition: transform 0.3s;
+}
+
+.tarjeta:hover {
+  transform: scale(1.05);
+}
+
+
+.contenedor-imagen{
+    width: 100px;
+    height: 150px;
+    border-radius:20px;
+    padding: 1 100px;
+}
+
+.tarjeta img{
+    width: 150px;
+    height: 150px;
+    border-radius: 15%;
+    object-fit: cover; 
+    display: block ;         
+}
+
+.contenedor-imagen {
+  width: 100%;
+  display: flex;
+  justify-content: center;  
+  align-items: center;       
+  text-align: center;
+}
+
+
+.contenedor-texto{
+    width: 100%;
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+/*.space-bottoms{
+
+}
+
+.color-editar{
+
+}
+
+.color-eliminar{
+
+}*/
+
+.formulario{
+    margin: 20px;
+    display: flexbox ;
+    height: 760px;
+    background-color: #ffebcd;
+    color:#000000;
+    padding: 30px;
+    border-radius: 25px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 480px;
+    position: sticky;
+    top: 100px;
+    justify-content: right;
+    align-self: flex-start;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+h2{
+    text-align: center;
+    font-family: 'Lucida Calligraphy', cursive;
+    font-size: 30px;
+}
+.label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea{
+    background-color: #fffefa;
+    border: 2px dashed #f1c40f;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width: 100%;
+    color: #3b2e00;
+    cursor: pointer;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.disponible {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+input[type="checkbox"] {
+  appearance: none; /* Quita el estilo por defecto */
+  background-color: #fffefa;
+  border: 2px dashed #f9ce70;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+input[type="checkbox"]:hover {
+  border-color: #ffe291;
+  background-color: #fff4cc;
+}
+
+
+input[type="checkbox"]:checked {
+  background-color: #ffeeaa;
+  border-style: solid;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: #f1cf45;
+  font-size: 24px;
+  position: absolute;
+  top: 8px;
+  left: 12px;
+}
+
+
+#botonGuardar {
+    align-self: center;
+    background-color: #ffd28fc9;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Lucida Calligraphy', cursive;
+    font-size: 14px;
+    cursor: default;
+    transition: background-color 0.3s ease;
+}
+
+
+.buscador {
+  display: flex;
+  gap: 5px;
+  width: 60%;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.boton-buscador{
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fffefa;
+  border: 2px dashed #f1c40f;
+  border-radius: 10px;
+  width: 100%;
+  color: #3b2e00;
+  cursor: pointer;
+  box-shadow: inset 0 0 3px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.space-bottoms{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.space-bottoms button {
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-editar{
+  background-color: #38BE13;
+  color: white;
+}
+.color-editar:hover {
+  background-color: #a7ed76;
+  transform: scale(1.05);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.color-eliminar{
+  background-color: #E83A17;
+  color: white;
+}
+.color-eliminar:hover {
+  background-color: #f06a6a;
+  transform: scale(1.05);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Estilo general de la alerta */
+.alerta{
+  position: fixed;           /* se mantiene fija aunque se haga scroll */
+  top: 50%;                  /* mitad vertical */
+  left: 50%;                 /* mitad horizontal */
+  transform: translate(-50%, -50%); /* centra perfectamente */
+  z-index: 9999;             /* por encima de todo */
+
+  background-color: #d4edda; /* Verde suave */
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 10px;
+  padding: 20px 30px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: aparecer 0.4s ease;
+}
+
+/* Botón de cerrar (la X) */
+.alerta .cerrar {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: #155724;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.alerta .cerrar:hover {
+  color: #0b2e13;
+}
+
+/* Animación de entrada */
+@keyframes aparecer {
+   from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+.alerta2{
+  position: fixed;           /* se mantiene fija aunque se haga scroll */
+  top: 50%;                  /* mitad vertical */
+  left: 50%;                 /* mitad horizontal */
+  transform: translate(-50%, -50%); /* centra perfectamente */
+  z-index: 9999;             /* por encima de todo */
+
+  background-color: #fbdddd; /* Verde suave */
+  color: #671b1b;
+  border: 1px solid #e6c3c3;
+  border-radius: 10px;
+  padding: 20px 30px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: aparecer 0.4s ease;
+}
+
+/* Botón de cerrar (la X) */
+.alerta2 .cerrar {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: #571515;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.alerta2 .cerrar:hover {
+  color: #2e0b0b;
+}
+
+/* Animación de entrada */
+@keyframes aparecer {
+   from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@media (max-width: 900px) {
+  .contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+  .formulario {
+    width: 90%;
+    position: static;
+  }
+}

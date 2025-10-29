@@ -1,0 +1,123 @@
+<header>
+  {{title}}
+</header>
+
+<!--<app-component-explicacion>--->
+<div class="buscador">
+    <input
+      type="text"
+      [(ngModel)]="nombreProducto"
+      placeholder="🔍 Escribe el nombre de un Producto"
+  />
+    <button class="boton-buscador" (click)="buscarProducto()">🔍</button>
+  </div>
+<div class="contenedor">
+  <div class="lista-tarjetas">
+    <div class="tarjeta" *ngFor="let producto of productosFiltrados">
+      <div class="contenedor-imagen">
+        <img [src]="producto.imagen" alt="{{ producto.nombre }}" />
+      </div>
+      <div class="contenedor-texto">
+          <h3 class="centrar-texto">{{ producto.nombre }}</h3>
+          <p> {{ producto.descripcion }}</p>
+          <p class="centrar-texto negrilla">${{ producto.precio }}</p>
+      </div>
+      <div class="space-bottoms">
+          <button class="color-editar" (click)="editarProducto(producto)">
+              ✏️
+          </button>
+          <button class="color-eliminar" (click)="eliminarProducto(producto)">
+              🗑️
+          </button>
+      </div>
+    </div>
+
+    <!---<div class="tarjeta">
+      <div class="contenedor-imagen">
+          <img [src]="'https://images.pexels.com/photos/1108117/pexels-photo-1108117.jpeg'">
+      </div>
+      <div class="contenedor-texto">
+          <h3 class="centrar-texto">Hamburguesa</h3>
+          <p>'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ab officiis hic quidem, illum sit, totam ipsa maxime facere vero debitis rem deleniti nobis a perferendis consequuntur modi ullam temporibus!'...</p>
+          <p class="centrar-texto">Ver más</p>
+          <p class="centrar-texto negrilla">$20.99</p>
+      </div>
+      <div class="space-bottoms">
+          <button class="color-editar">
+              ✏️
+          </button>
+          <button class="color-eliminar">
+              🗑️
+          </button>
+      </div>
+  </div>--->
+</div>
+  
+
+
+
+  <div class="formulario">
+    <h2>Registrar Nuevo Producto</h2>
+
+    <form (ngSubmit)="onSubmit()">
+
+      <label for="name">Nombre</label>
+      <input id="name" type="text" placeholder="Ingrese el nombre del producto" [(ngModel)]="nuevoProducto.nombre" name="nombre">
+
+
+      <label for="description">Descripción</label>
+      <textarea id="description" type="text" placeholder="Ingrese una breve descripción"[(ngModel)]="nuevoProducto.descripcion" name="descripcion"></textarea><!--formControlName="description" -->
+
+      <label for="category">Categoría</label>
+      <input id="category" type="text" placeholder="Ejemplo: Electrónica, Hogar..."[(ngModel)]="nuevoProducto.categoria" name="categoria"> <!--formControlName="category" -->
+
+      <label for="imageUrl">Imagen URL</label>
+      <input id="imageUrl" type="text" placeholder="https://ejemplo.com/imagen.jpg" [(ngModel)]="nuevoProducto.imagen" name="imagen"> <!--formControlName="imageUrl" -->
+
+      <div>
+          <label for="startDate">Fecha Inicio</label>
+          <input id="startDate" type="date" > <!--formControlName="startDate" -->
+
+          <label for="endDate">Fecha Fin</label>
+          <input id="endDate" type="date" > <!--formControlName="endDate" -->
+      </div>
+
+      <div >
+          <label for="price">Precio</label>
+          <input id="price" type="number" placeholder="0" [(ngModel)]="nuevoProducto.precio" name="precio"> <!--formControlName="price" -->
+
+          <label for="units">Unidades</label>
+          <input id="units" type="number" placeholder="0" [(ngModel)]="nuevoProducto.unidades" name="unidades"> <!--formControlName="stock" -->
+      </div>
+
+      <div class="disponible">
+        <input id="available" type="checkbox" [(ngModel)]="nuevoProducto.disponible" name="disponible"> <!--formControlName="available" -->
+        <label for="available">Disponible</label>
+      </div>
+
+      <button type="button" id="botonGuardar" (click)="onSubmit()">
+        Guardar
+      </button>
+    </form>
+  </div>
+  <div *ngIf="mostrarAlerta" class="alerta">
+    <strong>¡Éxito!</strong> Los datos se guardaron correctamente.
+  </div>
+  <div *ngIf="mostrarAlerta2" class="alerta2">
+    <strong>¡Atención!</strong> Ingrese un nombre para buscar.
+  </div>
+  <div *ngIf="mostrarAlerta3" class="alerta2">
+    <strong>¡Atención!</strong> No se encontraron productos con ese nombre.
+  </div>
+  <div *ngIf="mostrarAlerta4" class="alerta2">
+    <strong>¡Atención!</strong> Por favor completa el nombre del producto.
+  </div>
+  
+
+  </div>
+
+  <router-outlet />
+
+<footer>
+  &copy;{{footer}} | Web Disigner
+</footer>

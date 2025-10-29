@@ -1,0 +1,19 @@
+.modifica-color{
+    background-color: aquamarine;
+}
+
+h2{
+    background-color: blueviolet;
+    justify-self: center;
+}
+
+h3{
+    background-color: brown;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h3:hover{
+    background-color: fuchsia;
+    cursor: default;
+    color: blanchedalmond;
+    
+}
