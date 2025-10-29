@@ -57,7 +57,7 @@ export class App {
     descripcion: '',
     categoria: '',
     imagen: '',
-    precio: 0.00,
+    precio: 0,
     unidades: 0,
     disponible: false
   };
